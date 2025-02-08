@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./components/Dashboard"; // ✅ Importing correctly
+import Dashboard from "../src/Dashboard"; 
 import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 

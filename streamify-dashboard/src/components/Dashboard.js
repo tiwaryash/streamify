@@ -49,13 +49,13 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="p-6 text-gray-900 dark:text-white transition-colors duration-200">
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-semibold flex items-center gap-2">
-          <Music className="w-8 h-8 text-blue-500" /> 
+    <div className="p-4 sm:p-6 text-gray-900 dark:text-white transition-colors duration-200">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4">
+        <h1 className="text-xl sm:text-2xl font-semibold flex items-center gap-2">
+          <Music className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" /> 
           Streamify Dashboard
         </h1>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <DateRangeSelector onRangeChange={handleDateRangeChange} />
           <NotificationCenter />
           <button
@@ -74,16 +74,16 @@ const Dashboard = () => {
       </div>
       
       <Metrics data={dashboardData.metrics} />
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-        <div className="lg:col-span-2 space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-4">
+        <div className="sm:col-span-2 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <UserGrowthChart data={dashboardData.userGrowth} />
             <TopSongsChart data={dashboardData.topSongs} />
           </div>
           <RevenueChart onSegmentClick={handleSegmentClick} />
           <DataTable data={filteredData} />
         </div>
-        <div className="space-y-6">
+        <div className="space-y-4">
           <TrendingAnalysis />
           <UserActivityTimeline />
         </div>

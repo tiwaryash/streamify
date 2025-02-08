@@ -50,7 +50,7 @@ const UserActivityTimeline = () => {
         <FaUser className="text-blue-500" />
         Live User Activity
       </h3>
-      <div className="h-[504px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 
+      <div className="h-[496px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 
                     dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
         <div className="space-y-4">
           {activities.map((activity) => (

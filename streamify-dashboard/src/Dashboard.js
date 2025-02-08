@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import DateRangeSelector from "./DateRangeSelector";
-import NotificationCenter from "./NotificationCenter";
-import UserActivityTimeline from "./UserActivityTimeline";
-import TrendingAnalysis from "./TrendingAnalysis";
-import Metrics from "./Metrics";
-import UserGrowthChart from "./charts/UserGrowthChart";
-import RevenueChart from "./charts/RevenueChart";
-import TopSongsChart from "./charts/TopSongsChart";
-import DataTable from "./DataTable";
+import DateRangeSelector from "./components/DateRangeSelector";
+import NotificationCenter from "./components/NotificationCenter";
+import UserActivityTimeline from "./components/UserActivityTimeline";
+import TrendingAnalysis from "./components/TrendingAnalysis";
+import Metrics from "./utils/Metrics";
+import UserGrowthChart from "./components/charts/UserGrowthChart";
+import RevenueChart from "./components/charts/RevenueChart";
+import TopSongsChart from "./components/charts/TopSongsChart";
+import DataTable from "./components/DataTable";
 import { Music, Sun, Moon } from "lucide-react";
-import { useTheme } from "../context/ThemeContext";
-import generateMockData from "../utils/mockData";
+import { useTheme } from "./context/ThemeContext";
+import generateMockData from "./utils/mockData";
 
 const Dashboard = () => {
   const { isDarkMode, toggleTheme } = useTheme();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import DataTable from './DataTable';
+import DataTable from './components/DataTable';
 
 const mockData = [
   { song: 'Song A', artist: 'Artist A', date: '2023-01-01', streams: 1000, userId: '1' },

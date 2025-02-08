@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -12,6 +12,13 @@ const revenueData = [
 
 const RevenueChart = ({ onSegmentClick }) => {
   const { isDarkMode } = useTheme();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const chartColors = {
     text: isDarkMode ? "#E5E7EB" : "#374151",
@@ -30,6 +37,8 @@ const RevenueChart = ({ onSegmentClick }) => {
     chartColors.affiliate,
   ];
 
+  const outerRadius = windowWidth < 768 ? 50 : 80; // Adjust outer radius based on screen size
+
   return (
     <div className="bg-white dark:bg-gray-800 shadow-md p-5 rounded-lg transition-colors duration-200">
       <h3 className="text-gray-700 dark:text-gray-200 font-semibold mb-3">
@@ -43,7 +52,7 @@ const RevenueChart = ({ onSegmentClick }) => {
             nameKey="name"
             cx="50%" 
             cy="50%" 
-            outerRadius={80} 
+            outerRadius={outerRadius} 
             label
             onClick={(data, index) => onSegmentClick(revenueData[index].name)}
           >

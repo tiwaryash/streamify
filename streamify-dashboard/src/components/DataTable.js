@@ -35,7 +35,7 @@ const DataTable = ({ data }) => {
   });
 
   return (
-    <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-colors duration-200">
+    <div className="mt-4 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-colors duration-200">
       <div className="p-4">
         <input
           type="text"
@@ -48,29 +48,29 @@ const DataTable = ({ data }) => {
       </div>
 
       <div className="overflow-x-auto">
-      <div className="max-h-60 overflow-y-auto" style={{ maxHeight: '400px' }}> {/* Adjusted maxHeight */}
-      <table className="w-full border-collapse text-left text-sm">
+        <div className="max-h-60 overflow-y-auto" style={{ maxHeight: '400px' }}>
+          <table className="min-w-full border-collapse text-left text-sm">
             <thead className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 sticky top-0">
               <tr>
-                <th className="p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
+                <th className="p-2 sm:p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
                     onClick={() => handleSort("song")}>Song Name <FaSort /></th>
-                <th className="p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
+                <th className="p-2 sm:p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
                     onClick={() => handleSort("artist")}>Artist <FaSort /></th>
-                <th className="p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
+                <th className="p-2 sm:p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
                     onClick={() => handleSort("date")}>Date <FaSort /></th>
-                <th className="p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
+                <th className="p-2 sm:p-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" 
                     onClick={() => handleSort("streams")}>Streams <FaSort /></th>
-                <th className="p-3">User ID</th>
+                <th className="p-2 sm:p-3">User ID</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
               {sortedData.map((item, index) => (
                 <tr key={index} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                  <td className="p-3 text-gray-900 dark:text-gray-200">{item.song}</td>
-                  <td className="p-3 text-gray-900 dark:text-gray-200">{item.artist}</td>
-                  <td className="p-3 text-gray-900 dark:text-gray-200">{item.date}</td>
-                  <td className="p-3 text-gray-900 dark:text-gray-200">{item.streams.toLocaleString()}</td>
-                  <td className="p-3 text-gray-900 dark:text-gray-200">{item.userId}</td>
+                  <td className="p-2 sm:p-3 text-gray-900 dark:text-gray-200">{item.song}</td>
+                  <td className="p-2 sm:p-3 text-gray-900 dark:text-gray-200">{item.artist}</td>
+                  <td className="p-2 sm:p-3 text-gray-900 dark:text-gray-200">{item.date}</td>
+                  <td className="p-2 sm:p-3 text-gray-900 dark:text-gray-200">{item.streams.toLocaleString()}</td>
+                  <td className="p-2 sm:p-3 text-gray-900 dark:text-gray-200">{item.userId}</td>
                 </tr>
               ))}
             </tbody>

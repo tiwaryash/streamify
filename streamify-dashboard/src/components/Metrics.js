@@ -1,5 +1,5 @@
 import React from "react";
-import MetricCard from "./MetricCard";
+import MetricCard from "../components/MetricCard";
 import { FaUser, FaMusic, FaDollarSign, FaChartLine, FaCrown } from "react-icons/fa";
 
 const Metrics = ({ data = {} }) => {

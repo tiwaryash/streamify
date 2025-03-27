@@ -81,3 +81,6 @@ This will generate a `build` directory containing the optimized application.
 ## Conclusion
 
 The Streamify Dashboard is a prototype that showcases the potential of a music streaming analytics platform. The design choices made during development prioritize user experience and maintainability, while the use of mock data allows for rapid prototyping. Future enhancements could include integrating a real backend, optimizing performance, and expanding the feature set based on user feedback.
+
+
+Test
